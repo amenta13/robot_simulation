@@ -1,0 +1,29 @@
+/* style.css */
+#W { 
+    background-color: yellowgreen; 
+    width: 130px; 
+    height: 130px; 
+    font-size: 24px; 
+    margin-left: 134px; 
+    margin-bottom: 3px;
+}
+
+#A {
+    background-color: yellowgreen; 
+    width: 130px; 
+    height: 130px; 
+    font-size: 24px; 
+}
+
+#S {
+    background-color: yellowgreen; 
+    width: 130px; 
+    height: 130px; 
+    font-size: 24px; 
+}
+#D {
+    background-color: yellowgreen; 
+    width: 130px; 
+    height: 130px; 
+    font-size: 24px; 
+}
