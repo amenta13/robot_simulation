@@ -1,0 +1,56 @@
+Documentation of important variables in myBlockly coding.
+
+x:
+    moves arm left(+) and right(-)
+    Max value: 280
+    Min value: -280
+y:
+    moves arm forward(+) and backwward(-)
+    Max value: 280
+    Min value: -280
+z:
+    moves arm up(+) and down(-)
+    Max value: 280
+    Min value: 0
+
+The tip of the gripper will be at coordinates (x,y,z)
+
+
+rx: rotates about the X-axis; tilts the wrist forward/backward (like nodding "yes" or "no")
+ry: rotates about the Y-axis; tilts the wrist side-to-side (like tilting "maybe")
+rz: rotates about the Z-axis; rotates the gripper clockwise/counterclockwise (like turning a doorknob)
+
+Each measured in degrees from -180 to 180
+
+
+speed: normalized speed; 10 - moves gently and smoothly: 50 - moderate speed; 100 - full speed
+
+
+J1:
+    Base rotation
+    Max value: 160
+    Min value: -160
+J2:
+    Shoulder
+    Max value: 100
+    Min value: -100
+J3:
+    Elbow
+    Max value: 100
+    Min value: -100
+J4:
+    Wrist pitch
+    Max value: 180
+    Min value: -180
+J5:
+    Wrist yaw
+    Max value: 180
+    Min value: -180
+J6:
+    Wrist roll
+    Max value: 180
+    Min value: -180
+
+J1-J3 mostly controls position (location of gripper)
+J4-J6 mostly controls orientation (angle of gripper)
+Setting initial values to (0,0,0,0,0,0) sets arm vertically erect
