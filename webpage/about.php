@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
-    <title>About - Robotic Arm </title>
+    <title>About </title>
 </head>
 <body>
     <nav>
@@ -13,13 +13,19 @@
     <nav>
         <a href="controls.php">Controls</a>
     </nav>
-    <main>
-        <h1>About</h1>
+    <main class="about-main">
+        <h1 class="about-title">
+            <span class="about-line">About</span>
+            <span class="about-line about-dash">-</span>
+            <span class="about-line">Robotic Arm</span>
+        </h1>
         <section id="about-content">
-                                                              Our Vision
-             This website will be used to send prewritten commands to the robotic arm to perform different tasks.
-             The goal is to have the arm be able to move, pick-up, and stack blocks while also being able to grab and throw a ball.
-             After these pre-made commands are implemented, we aim to allow for free movement with WASD buttons for movement.
+            <h2>Our Vision</h2>
+            <p>
+                This website will be used to send prewritten commands to the robotic arm to perform different tasks.
+                The goal is to have the arm be able to move, pick-up, and stack blocks while also being able to grab and throw a ball.
+                After these pre-made commands are implemented, we aim to allow for free movement with WASD buttons for movement.
+            </p>
         </section>
     </main>
 </body>
