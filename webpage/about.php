@@ -13,7 +13,7 @@
     <nav>
         <a href="controls.php">Controls</a>
     </nav>
-    <main class="about-main">
+    <main class="about_main">
         <h1 class="about-title">
             <span class="about-line">About</span>
             <span class="about-line about-dash">-</span>
@@ -30,6 +30,6 @@
     </main>
 </body>
 <footer>
-    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, Ryan Woodruff</h1>
+    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, and Ryan Woodruff</h1>
 </footer>
 </html>
