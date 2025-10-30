@@ -19,6 +19,9 @@ require_once 'web_elements/navbar.php';
     <nav>
         <a href="controls.php">Controls</a>
     </nav>
+    <nav>
+        <a href="login.php">Login</a>
+    </nav>
     <main class="about_main">
         <div class="center-container">
             <h1>About - Robotic Arm</h1>
@@ -36,4 +39,7 @@ require_once 'web_elements/navbar.php';
         </div>
     </main>
 </body>
+<footer>
+    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, Ryan Woodruff</h1>
+</footer>
 </html>

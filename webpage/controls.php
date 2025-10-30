@@ -19,6 +19,9 @@ require_once 'web_elements/navbar.php';
     <nav>
         <a href="about.php">About</a>
     </nav>
+    <nav>
+        <a href="login.php">Login</a>
+    </nav>
     <button id="W" onclick="Wbutt()">W</button>
     <br>
     <button id="A" onclick="Abutt()">A</button>
@@ -27,6 +30,6 @@ require_once 'web_elements/navbar.php';
     <script src="func.js"></script>
 </body>
 <footer>
-    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, Ryan Woodruff</h1>
+    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, and Ryan Woodruff</h1>
 </footer>
 </html>
