@@ -20,4 +20,7 @@
     <button id="D" onclick="Dbutt()">D</button>
     <script src="func.js"></script>
 </body>
+<footer>
+    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, Ryan Woodruff</h1>
+</footer>
 </html>

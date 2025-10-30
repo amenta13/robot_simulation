@@ -29,4 +29,7 @@
         </section>
     </main>
 </body>
+<footer>
+    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, Ryan Woodruff</h1>
+</footer>
 </html>
