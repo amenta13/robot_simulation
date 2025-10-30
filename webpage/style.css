@@ -56,7 +56,7 @@
     line-height: 1.6;
 }
 /* Center the about page content in the viewport */
-about_main {
+.about_main {
     display: flex;
     flex-direction: column;
     align-items: center; /* horizontal center */
