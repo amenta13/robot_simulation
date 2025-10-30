@@ -13,7 +13,7 @@
     <nav>
         <a href="controls.php">Controls</a>
     </nav>
-    <main>
+    <main class="about-main">
         <h1 class="about-title">
             <span class="about-line">About</span>
             <span class="about-line about-dash">-</span>
