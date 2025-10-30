@@ -5,6 +5,7 @@
       <li><a href="index.php">Home</a></li>
       <li><a href="controls.php">Controls</a></li>
       <li><a href="about.php">About</a></li>
+      <li><a href="login.php">Login</a></li>
     </ul>
   </nav>
 </header>

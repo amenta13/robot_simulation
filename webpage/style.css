@@ -90,13 +90,13 @@ body, ul {
 }
 
 header {
-  background-color: #007bff;     /* 💙 blue background */
-  color: white;                  /* white text */
+  background-color: #007bff;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 30px;
-  position: fixed;               /* stays at top */
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
