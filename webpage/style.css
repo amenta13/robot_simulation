@@ -76,4 +76,51 @@
 footer {
     margin-top: 40px;
     width: 100%;
+    align-items: center; /* horizontal center */
+    justify-content: center; /* vertical center */
+    min-height: calc(100vh - 80px); /* leave room for nav(s) */
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+
+/* Navigation Bar styles */
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;     /* 💙 blue background */
+  color: white;                  /* white text */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  position: fixed;               /* stays at top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color:rgb(0, 75, 152);
 }
