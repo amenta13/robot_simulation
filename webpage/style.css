@@ -27,3 +27,31 @@
     height: 130px; 
     font-size: 24px; 
 }
+
+/* About page styles */
+.about-title {
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+.about-title .about-line {
+    display: block;
+}
+.about-title .about-dash {
+    font-size: 1.2em;
+    margin: 6px 0;
+}
+#about-content {
+    max-width: 720px;
+    margin: 20px auto;
+    padding: 0 12px;
+}
+#about-content h2 {
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+#about-content p {
+    text-align: center;
+    line-height: 1.6;
+}
