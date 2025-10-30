@@ -8,7 +8,10 @@
 </head>
 <body>
     <nav>
-        <a href="about.html">About</a>
+        <a href="index.php">Home</a>
+    </nav>
+    <nav>
+        <a href="about.php">About</a>
     </nav>
     <button id="W" onclick="Wbutt()">W</button>
     <br>

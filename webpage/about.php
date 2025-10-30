@@ -8,7 +8,10 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.php">Home</a>
+    </nav>
+    <nav>
+        <a href="controls.php">Controls</a>
     </nav>
     <main>
         <h1>About</h1>
