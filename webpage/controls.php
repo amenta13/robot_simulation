@@ -2,7 +2,6 @@
 
 require_once 'web_elements/navbar.php';
 
-
 ?>
 
 <!DOCTYPE html>
