@@ -1,19 +1,70 @@
-// move forward
-function Wbutt() {
+// Simple frontend functions hooked to buttons in index.html
+// Configure API_BASE to point to your Flask API. By default it uses same origin '/api'.
+const API_BASE = 'http://10.110.51.25:8000/api'; // change to 'http://<PI_IP>:5000/api' if API runs on Pi
 
+async function postCommand(action, params = []) {
+	try {
+		const resp = await fetch(`${API_BASE}/command`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ action: action, params: params })
+		});
+		const data = await resp.json();
+		console.log('response', data);
+		const status = document.getElementById('status');
+		if (data.ok) {
+			status.textContent = `OK: ${action}`;
+			status.style.color = 'black';
+		} else {
+			status.textContent = `ERR: ${data.error || JSON.stringify(data)}`;
+			status.style.color = 'crimson';
+		}
+		return data;
+	} catch (err) {
+		console.error(err);
+		const status = document.getElementById('status');
+		if (status) {
+			status.textContent = 'Network error - check API host';
+			status.style.color = 'crimson';
+		}
+		return { ok: false, error: err.toString() };
+	}
 }
 
-// move left
-function Abutt() {
-
+function ensureStatusDiv() {
+	if (!document.getElementById('status')) {
+		const s = document.createElement('div');
+		s.id = 'status';
+		s.style.marginTop = '12px';
+		document.body.appendChild(s);
+	}
 }
 
-// move backward
-function Sbutt() {
+// Example button handlers that move joints
+// Adjust joint indexes and angles as needed for your robot
 
+// helper: move a joint to an absolute angle
+async function moveJoint(index, angle) {
+    return await postCommand('move_joint', [index, angle]);
 }
 
-// move right
-function Dbutt() {
-    
+// simple preset moves — these assume joint 1/2 exist
+async function Wbutt() { // e.g. rotate joint 1 positive
+    ensureStatusDiv();
+    await moveJoint(1, 10); // set to 10 degrees (or change to desired angle)
+}
+
+async function Sbutt() { // rotate joint 1 negative
+    ensureStatusDiv();
+    await moveJoint(1, -10);
+}
+
+async function Abutt() { // rotate joint 2 negative
+    ensureStatusDiv();
+    await moveJoint(2, -10);
+}
+
+async function Dbutt() { // rotate joint 2 positive
+    ensureStatusDiv();
+    await moveJoint(2, 10);
 }
