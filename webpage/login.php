@@ -21,7 +21,7 @@ require_once 'web_elements/navbar.php';
         </nav>
     </head>
     <body>
-        
+
     </body>
     <footer>
         <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, and Ryan Woodruff</h1>
