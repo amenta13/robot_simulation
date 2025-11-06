@@ -1,6 +1,6 @@
 // Simple frontend functions hooked to buttons in index.html
 // Configure API_BASE to point to your Flask API. By default it uses same origin '/api'.
-const API_BASE = 'http://10.110.51.25:8000/api'; // change to 'http://<PI_IP>:5000/api' if API runs on Pi
+const API_BASE = 'http://localhost:5000/api'; // Flask API running on same machine
 
 async function postCommand(action, params = []) {
 	try {

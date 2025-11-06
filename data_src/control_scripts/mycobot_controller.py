@@ -27,10 +27,19 @@ def _connect():
         _mc = None
         return None
     try:
-        # assume serial device
-        _mc = MyCobot(addr, 115200)
-        return _mc
-    except Exception:
+        # Check if it's a network address (IP:port) or serial device
+        if ':' in addr:
+            # Network connection - split IP and port
+            ip, port = addr.split(':', 1)
+            from pymycobot import MyCobot280
+            _mc = MyCobot280(ip, int(port))
+            return _mc
+        else:
+            # Serial device connection
+            _mc = MyCobot(addr, 115200)
+            return _mc
+    except Exception as e:
+        print(f"Connection error: {e}")
         _mc = None
         return None
 

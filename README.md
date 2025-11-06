@@ -1,5 +1,5 @@
 # robot_simulation
-### Robot IP: 10.110.51.25
+### Robot IP: 10.110.51.70
 
 This repository contains a simple web UI (`webpage/`) and a small Flask API (`data_src/api/server.py`) plus a controller module (`data_src/control_scripts/mycobot_controller.py`) to connect to a MyCobot 280 Pi.
 
