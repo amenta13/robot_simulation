@@ -29,7 +29,10 @@ require_once 'web_elements/navbar.php';
     <button id="D" onclick="Dbutt()">D</button>
     <script src="func.js"></script>
 </body>
-<footer>
-    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, and Ryan Woodruff</h1>
-</footer>
 </html>
+
+<?php
+
+require_once 'web_elements/footer.php';
+
+?>

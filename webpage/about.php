@@ -13,15 +13,6 @@ require_once 'web_elements/navbar.php';
     <title>About </title>
 </head>
 <body>
-    <nav>
-        <a href="index.php">Home</a>
-    </nav>
-    <nav>
-        <a href="controls.php">Controls</a>
-    </nav>
-    <nav>
-        <a href="login.php">Login</a>
-    </nav>
     <main class="about_main">
         <div class="center-container">
             <h1>About - Robotic Arm</h1>
@@ -33,13 +24,13 @@ require_once 'web_elements/navbar.php';
                     After these pre-made commands are implemented, we aim to allow for free movement with WASD buttons for movement.
                 </p>
             </section>
-            <footer>
-                <p id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, and Ryan Woodruff</p>
-            </footer>
         </div>
     </main>
 </body>
-<footer>
-    <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, Ryan Woodruff</h1>
-</footer>
 </html>
+
+<?php
+
+require_once 'web_elements/footer.php';
+
+?>
