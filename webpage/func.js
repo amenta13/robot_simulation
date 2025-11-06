@@ -68,3 +68,54 @@ async function Dbutt() { // rotate joint 2 positive
     ensureStatusDiv();
     await moveJoint(2, 10);
 }
+
+// --- Visual press helpers and event wiring (non-destructive) ---
+function pressVisual(id) {
+	const el = document.getElementById(id);
+	if (!el) return;
+	el.classList.add('pressed');
+}
+
+function releaseVisual(id) {
+	const el = document.getElementById(id);
+	if (!el) return;
+	el.classList.remove('pressed');
+}
+
+const keyMap = {
+	'w': { id: 'W', fn: Wbutt },
+	'a': { id: 'A', fn: Abutt },
+	's': { id: 'S', fn: Sbutt },
+	'd': { id: 'D', fn: Dbutt }
+};
+
+window.addEventListener('keydown', (e) => {
+	const k = e.key.toLowerCase();
+	if (keyMap[k]) {
+		// prevent repeating visual spam on key repeat
+		if (e.repeat) return;
+		e.preventDefault();
+		pressVisual(keyMap[k].id);
+		try { keyMap[k].fn(); } catch (err) { console.error(err); }
+	}
+});
+
+window.addEventListener('keyup', (e) => {
+	const k = e.key.toLowerCase();
+	if (keyMap[k]) {
+		e.preventDefault();
+		releaseVisual(keyMap[k].id);
+	}
+});
+
+['W','A','S','D'].forEach(id => {
+	const btn = document.getElementById(id);
+	if (!btn) return;
+	btn.addEventListener('mousedown', () => pressVisual(id));
+	btn.addEventListener('mouseup', () => releaseVisual(id));
+	btn.addEventListener('mouseleave', () => releaseVisual(id));
+	btn.addEventListener('click', () => {
+		const mapping = Object.values(keyMap).find(m => m.id === id);
+		if (mapping) mapping.fn();
+	});
+});
