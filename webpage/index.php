@@ -25,7 +25,10 @@ require_once 'web_elements/navbar.php';
         <h2 style="text-align:center;font-size: 25px;color:#084873;">This website pairs with the MyCobot robotic arm from Elephant Robotics to demonstrate web design, database management, and programming. Navigate to the "Controls" page to input commands to the arm over the web or visit the "About" page to learn more.</h2>
         <img src="./web_elements/robotic-arm.gif" alt="" style="width:200px;height:auto;display:block;margin:0 auto;">
     </body>
-    <footer>
-        <h1 id="Footer">Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, and Ryan Woodruff</h1>
-    </footer>
 </html>
+
+<?php
+
+require_once 'web_elements/footer.php';
+
+?>

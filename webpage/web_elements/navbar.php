@@ -1,5 +1,7 @@
 <header>
-  <div class="logo">MyWebsite</div>
+  <div class="logo">
+    <img src="web_elements/logo.png">
+  </div>
   <nav>
     <ul>
       <li><a href="index.php">Home</a></li>
