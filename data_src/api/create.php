@@ -7,7 +7,7 @@ $username = $_POST["user"];
 
 $qry = "SELECT * FROM User WHERE Name = :u";
 $params = [":u"=> $username];
-$users = TriviaDatabase::getDataFromSQL($qry,$params);
+$users = RobotDatabase::getDataFromSQL($qry,$params);
 
     // If username is found
     if (is_array($users) && count($users) > 0) { 
@@ -25,7 +25,7 @@ $users = TriviaDatabase::getDataFromSQL($qry,$params);
         if (strlen($rawpassword) >= $minlength && strlen($rawpassword) <= $maxlength && preg_match('/[A-Z]/', $rawpassword) && preg_match('/[a-z]/', $rawpassword) && preg_match('/[0-9]/', $rawpassword) && preg_match('/[^A-Za-z0-9]/', $rawpassword)){
             $sql="INSERT INTO User (username, pass) VALUES (:u, :p);"; // Hash the password
             $params=[":u"=> $username, ":p"=>$hashed_password]; // No SQLi allowed
-            TriviaDatabase::executeSQL($sql,$params); // Add user info into database
+            RobotDatabase::executeSQL($sql,$params); // Add user info into database
             header("Location: ../../webpage/login.php"); // Redirect to login page
         } else {
             $password_error_message = "Password needs to contain between 8 and 20 characters, a capital letter, a lowercase letter, a number, and a special character."; // Error message
