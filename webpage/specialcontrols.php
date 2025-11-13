@@ -28,15 +28,19 @@ require_once 'web_elements/navbar.php';
         <div id="status" style="min-height:30px; margin-bottom:20px; font-weight:bold; color:#333;"></div>
         
         <!-- Image/GIF controls grid -->
-        <div class="controls-grid">
-            <img class="control-image" src="./web_elements/PUPD.gif" alt="Pick & Put Down Duck" 
+        <div class="speccontrols-grid">
+            <img class="speccontrol-image" src="./web_elements/PUPD.gif" alt="Pick & Put Down Duck" 
                  onclick="PUPDbutt()" title="Pick & Put Down Duck">
-            <img class="control-image" src="./web_elements/green.png" alt="Throw Ball" 
+                <p class="speccontrol-label">Pick & Put Down Duck</p> 
+            <img class="speccontrol-image" src="./web_elements/green.png" alt="Throw Ball" 
                  onclick="TBbutt()" title="Throw Ball">
-            <img class="control-image" src="./web_elements/Wave.gif" alt="Wave" 
+                <p class="speccontrol-label">Throw Ball</p>
+            <img class="speccontrol-image" src="./web_elements/Wave.gif" alt="Wave" 
                  onclick="Wavebutt()" title="Wave">
-            <img class="control-image" src="./web_elements/Wiggle.gif" alt="Wiggle" 
+                <p class="speccontrol-label">Wave</p>
+            <img class="speccontrol-image" src="./web_elements/Wiggle.gif" alt="Wiggle" 
                  onclick="Wigglebutt()" title="Wiggle">
+                <p class="speccontrol-label">Wiggle</p>
         </div>
     </div>
 
