@@ -20,8 +20,9 @@ require_once 'web_elements/navbar.php';
                 <h2>Our Vision</h2>
                 <p>
                     This website will be used to send prewritten commands to the robotic arm to perform different tasks.
-                    The goal is to have the arm be able to move, pick-up, and stack blocks while also being able to grab and throw a ball.
-                    After these pre-made commands are implemented, we aim to allow for free movement with WASD buttons for movement.
+                    The goal is to have the arm be able to move, pick-up, and stack blocks. The other goal is for the arm to
+                    be able to grab and throw a ball. 
+                    
                 </p>
             </section>
         </div>
