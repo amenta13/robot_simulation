@@ -29,8 +29,8 @@ require_once 'web_elements/navbar.php';
         
         <!-- Image/GIF controls grid -->
         <div class="speccontrols-grid">
-            <img class="speccontrol-image" src="./web_elements/PUPD.gif" alt="Pick & Put Down Duck" 
-                 onclick="PUPDbutt()" title="Pick & Put Down Duck">
+            <img class="speccontrol-image" src="./web_elements/PUPD.gif" alt="Pick Up & Put Down Duck" 
+                 onclick="PUPDbutt()" title="Pick Up & Put Down Duck">
                 <p class="speccontrol-label">Pick & Put Down Duck</p> 
             <img class="speccontrol-image" src="./web_elements/green.png" alt="Throw Ball" 
                  onclick="TBbutt()" title="Throw Ball">

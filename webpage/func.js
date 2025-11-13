@@ -125,7 +125,7 @@ async function PUPDbutt() {
 	ensureStatusDiv();
 	const status = document.getElementById('status');
 	if (status) {
-		status.textContent = 'Running: Pick & Put Down Duck...';
+		status.textContent = 'Running: Pick Up & Put Down Duck...';
 		status.style.color = '#3498db';
 	}
 	return await postCommand('run_preset', ['pickup_duck']);
