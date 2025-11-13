@@ -1,10 +1,7 @@
 CREATE TABLE IF NOT EXISTS  `User` (
-  `UserID` INT NOT NULL,
+  `UserID` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NULL,
   `Password` VARCHAR(45) NULL,
-  `RequestTime` VARCHAR(45) NULL,
-  `ObjectID` INT NULL,
-  `InsID` INT NULL,
   PRIMARY KEY (`UserID`))
 ENGINE = InnoDB;
 
