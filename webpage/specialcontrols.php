@@ -29,13 +29,13 @@ require_once 'web_elements/navbar.php';
         
         <!-- Image/GIF controls grid -->
         <div class="controls-grid">
-            <img class="control-image" src="./web_elements/duck.gif" alt="Pick & Put Down Duck" 
+            <img class="control-image" src="./web_elements/PUPD.gif" alt="Pick & Put Down Duck" 
                  onclick="PUPDbutt()" title="Pick & Put Down Duck">
-            <img class="control-image" src="./web_elements/ball.gif" alt="Throw Ball" 
+            <img class="control-image" src="./web_elements/Throwball.gif" alt="Throw Ball" 
                  onclick="TBbutt()" title="Throw Ball">
-            <img class="control-image" src="./web_elements/wave.gif" alt="Wave" 
+            <img class="control-image" src="./web_elements/Wave.gif" alt="Wave" 
                  onclick="Wavebutt()" title="Wave">
-            <img class="control-image" src="./web_elements/wiggle.gif" alt="Wiggle" 
+            <img class="control-image" src="./web_elements/Wiggle.gif" alt="Wiggle" 
                  onclick="Wigglebutt()" title="Wiggle">
         </div>
     </div>
