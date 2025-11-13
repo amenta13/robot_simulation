@@ -119,3 +119,44 @@ window.addEventListener('keyup', (e) => {
 		if (mapping) mapping.fn();
 	});
 });
+
+// --- Special Controls Handlers (for specialcontrols.php) ---
+async function PUPDbutt() {
+	ensureStatusDiv();
+	const status = document.getElementById('status');
+	if (status) {
+		status.textContent = 'Running: Pick & Put Down Duck...';
+		status.style.color = '#3498db';
+	}
+	return await postCommand('run_preset', ['pickup_duck']);
+}
+
+async function TBbutt() {
+	ensureStatusDiv();
+	const status = document.getElementById('status');
+	if (status) {
+		status.textContent = 'Running: Throw Ball...';
+		status.style.color = '#3498db';
+	}
+	return await postCommand('run_preset', ['throw_ball']);
+}
+
+async function Wavebutt() {
+	ensureStatusDiv();
+	const status = document.getElementById('status');
+	if (status) {
+		status.textContent = 'Running: Wave...';
+		status.style.color = '#3498db';
+	}
+	return await postCommand('run_preset', ['wave']);
+}
+
+async function Wigglebutt() {
+	ensureStatusDiv();
+	const status = document.getElementById('status');
+	if (status) {
+		status.textContent = 'Running: Wiggle...';
+		status.style.color = '#3498db';
+	}
+	return await postCommand('run_preset', ['wiggle']);
+}
