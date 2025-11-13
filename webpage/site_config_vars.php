@@ -3,24 +3,12 @@
 
     $domain = $_SERVER["HTTP_HOST"];
     $protocol_used =isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'?"https://":"http://";
-    $data_config_path = "../data_src/includes/db_config.php";
+    $data_config_path = __DIR__ . "/../data_src/includes/db_config.php";
 
     if ($domain == "127.0.0.1" || $domain == "localhost") {
 
         $installDir = "robotworks";
-        if (PHP_OS == "Darwin") {
-
-            $fullInstallPath = "/Applications/XAMPP/xamppfiles/htdocs/robot_simulation";
-
-        } else if (PHP_OS == "Linux") {
-
-            $fullInstallPath = "/opt/lampp/htdocs/robot_simulation";
-
-        } else {
-
-            $fullInstallPath = "C:/xampp/htdocs/robot_simulation";
-
-        }
+        $fullInstallPath = __DIR__ . "/..";
 
     } else {
 

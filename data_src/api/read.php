@@ -1,7 +1,7 @@
 <?php
-require_once "../../webpage/site_config_vars.php";
-require_once "../includes/db_config.php";
-require_once "../classes/RobotDatabase.php";
+require_once __DIR__ . "/../../webpage/site_config_vars.php";
+require_once __DIR__ . "/../includes/db_config.php";
+require_once __DIR__ . "/../classes/RobotDatabase.php";
 
 session_start();
 
