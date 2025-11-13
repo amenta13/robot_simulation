@@ -1,3 +1,3 @@
 <footer>
-  <p>Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, Ryan Woodruff</p>
+  <p>Designed by Andrew Ament, Hunter Rohrbaugh, Braden Scott, and Ryan Woodruff</p>
 </footer>
