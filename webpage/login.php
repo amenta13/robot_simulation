@@ -1,7 +1,5 @@
 <?php
-
 require_once 'web_elements/navbar.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -10,15 +8,6 @@ require_once 'web_elements/navbar.php';
         <meta charset="UTF-8">
         <link href="style.css" rel="stylesheet">
         <title>Login Page</title>
-        <nav>
-            <a href="controls.php">Controls</a>
-        </nav>
-        <nav>
-            <a href="about.php">About</a>
-        </nav>
-        <nav>
-            <a href="index.php">Home</a>
-        </nav>
     </head>
     <body>
         <div class="login-container">
@@ -32,12 +21,13 @@ require_once 'web_elements/navbar.php';
                 
                 <button type="submit">Login</button>
             </form>
+
+            <p>Don't have an account?
+                <a href="register.php"><button type="button">Register</button></a>
+            </p>
         </div>
+    <?php
+    require_once 'web_elements/footer.php';
+    ?>
     </body>
 </html>
-
-<?php
-
-require_once 'web_elements/footer.php';
-
-?>
