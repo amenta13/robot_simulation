@@ -31,7 +31,7 @@ require_once 'web_elements/navbar.php';
         <div class="controls-grid">
             <img class="control-image" src="./web_elements/PUPD.gif" alt="Pick & Put Down Duck" 
                  onclick="PUPDbutt()" title="Pick & Put Down Duck">
-            <img class="control-image" src="./web_elements/Throwball.gif" alt="Throw Ball" 
+            <img class="control-image" src="./web_elements/green.png" alt="Throw Ball" 
                  onclick="TBbutt()" title="Throw Ball">
             <img class="control-image" src="./web_elements/Wave.gif" alt="Wave" 
                  onclick="Wavebutt()" title="Wave">
