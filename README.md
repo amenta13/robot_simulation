@@ -114,10 +114,10 @@ Tell me whether you prefer the API on the Pi (Option A) or running locally for n
 ### Robot Connection Python<br>
 import mysql.connector<br>
 #### User names and passwords for db connection<br>
-dbuser="u413142534_robotwork"<br>
+dbuser="u413142534_robotworks"<br>
 dbpwd="two1x/Y9"<br>
 dbaddress="srv557.hstgr.io"<br>
-dbname="u413142534_robotworkdb"<br>
+dbname="u413142534_robotworksdb"<br>
 #make connection<br>
 cnx = mysql.connector.connect(user=dbuser, password=dbpwd,<br>
                               host=dbaddress,<br>
