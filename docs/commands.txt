@@ -3,4 +3,5 @@ All Commands Ran on Robot PI
 Done while trying to connect to database:
     sudo apt install python3.8-venv         (Install python virtual environment)
     sudo pip install mysql-connector-python
+    source my_mysql_env/bin/activate        (run virtual environment)
     
