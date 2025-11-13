@@ -7,7 +7,7 @@
 
     if ($domain == "127.0.0.1" || $domain == "localhost") {
 
-        $installDir = "robotwork";
+        $installDir = "robotworks";
         if (PHP_OS == "Darwin") {
 
             $fullInstallPath = "/Applications/XAMPP/xamppfiles/htdocs/robot_simulation";
@@ -25,7 +25,7 @@
     } else {
 
         $installDir = "";
-        $fullInstallPath = "/home/u413142534/domains/etowndb.com/public_html/robotwork";  
+        $fullInstallPath = "/home/u413142534/domains/etowndb.com/public_html/robotworks";  
 
     }
 
