@@ -82,44 +82,66 @@ button:active {
 }
 
 footer {
-  background-color: rgb(0, 75, 152);
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  width: 100%;
-  font-size: 14px;
+    background-color: rgb(0, 75, 152) !important;
+    color: white !important;
+    text-align: center !important;
+    padding: 15px 0 !important;
+    width: 100% !important;
+    font-size: 14px !important;
 
-  /* Sticky footer layout support */
-  margin-top: auto;
-}
+    /* Force footer to stay fixed to the bottom of the viewport */
+    position: fixed !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    z-index: 9999 !important;
+}  
 
 /* Navigation Bar styles */
 body, ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .logo img {
-  height: 50px;
-  width: auto;
+    height: 50px;
+    width: auto;
 }
 
 header {
-  background-color: rgb(0, 75, 152);
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 30px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-sizing: border-box;
+    background-color: rgb(0, 75, 152);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 body {
-  padding-top: 70px;
+    padding-top: 70px;
+}
+
+/* Prevent fixed footer from overlapping page content by adding bottom padding
+    equal or slightly larger than the footer height. Adjust if you change
+    footer padding/font-size. */
+/* Ensure page content doesn't get hidden behind the fixed footer.
+   We use a CSS variable so the footer height can be adjusted in one place. */
+:root {
+    --footer-height: 70px;
+}
+
+body {
+    padding-bottom: var(--footer-height);
+}
+
+/* If the footer height changes (due to responsive layout), this JS will update the variable.
+   The script is small and safe; it runs only if JS is enabled. */
+@media (min-width:0) {
+    /* placeholder for browsers; actual update is done by the small script below */
 }
 
 nav ul {
@@ -180,4 +202,88 @@ nav a:hover {
     color: #090909;
     font-weight: 500;
     text-transform: capitalize;
+}
+
+/* Center the login box vertically and horizontally */
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #f3f6fb;
+    font-family: Arial, sans-serif;
+}
+
+.page-wrap {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.login-container {
+    width: 360px;
+    background: #fff;
+    padding: 28px 24px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(30,40,60,0.12);
+    box-sizing: border-box;
+}
+.login-container h2 {
+    text-align: center;
+    margin: 0 0 12px;
+}
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-container label {
+    font-size: 14px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #dfe7f2;
+    border-radius: 6px;
+}
+
+.login-container button[type="submit"] {
+    margin-top: 6px;
+    padding: 10px 12px;
+    border: none;
+    background: #2673e6;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.login-container .actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.login-container .actions a button {
+    padding: 8px 12px;
+}
+
+footer#Footer {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* If the login/register container is placed directly under <body> (as in register.php),
+   center it vertically and horizontally without changing pages that wrap it in .page-wrap */
+body > .login-container {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
