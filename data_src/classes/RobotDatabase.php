@@ -1,6 +1,6 @@
 <?PHP
 
-class TriviaDatabase{
+class RobotDatabase{
     private static $conn = null;
     private static function connect() {
         global $host, $database, $db_user, $db_pass;  

@@ -12,4 +12,9 @@ if($_SERVER["HTTP_HOST"]=="127.0.0.1" || $_SERVER["HTTP_HOST"]=="localhost"){
     $db_pass = "two1x/Y9";
 }
 
+// Simple salting values for password hashing. In production use stronger random salts
+// and store them in a secure configuration not committed to source control.
+$salt1 = 's@ltOne!';
+$salt2 = '!s@ltTwo';
+
 ?>
