@@ -1,5 +1,5 @@
 <?php
-    require_once './db_config.php';
+    require_once __DIR__ . '/db_config.php';
 
     $conn = new mysqli($host, $db_user, $db_pass, $database);
 
