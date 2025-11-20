@@ -21,8 +21,8 @@ require_once 'web_elements/navbar.php';
         </nav>
     </head>
     <body>
-        <h1 style="text-align:center;font-weight:bold;font-size: 110px;color:#3498db;">Robot Arm Project</h1>
-        <h2 style="text-align:center;font-size: 25px;color:#084873;">This website pairs with the MyCobot robotic arm from Elephant Robotics to demonstrate web design, database management, and programming. Navigate to the "Controls or Special Controls" page to input commands to the arm over the web or visit the "About" page to learn more.</h2>
+        <h1 style="text-align:center;font-weight:bold;font-size: 100px;margin:0;color:#3498db;">Robot Arm Project</h1>
+        <h2 style="text-align:center;font-size: 25px;margin:50;color:#084873;">This website pairs with the MyCobot robotic arm from Elephant Robotics to demonstrate web design, database management, and programming. Navigate to the "Controls or Special Controls" page to input commands to the arm over the web or visit the "About" page to learn more.</h2>
         <img src="./web_elements/robotic-arm.gif" alt="" style="width:200px;height:auto;display:block;margin:0 auto;">
     </body>
 </html>
