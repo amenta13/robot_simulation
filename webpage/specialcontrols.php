@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="POST" style="display:inline-block; text-align:center;">
                 <input type="hidden" name="action" value="push">
                 <button type="submit" style="border:none; background:none;">
-                    <img class="speccontrol-image" src="./web_elements/Push.gif" alt="Push">
+                    <img class="speccontrol-image" src="./web_elements/Move.gif" alt="Push">
                 </button>
                 <p class="speccontrol-label">Push</p>
             </form>
