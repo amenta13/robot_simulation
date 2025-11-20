@@ -23,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $sql = "INSERT INTO Instruction (User_UserID, Robot_RobotID, Instruction, Status, Log) VALUES (1, 1, 'Wiggle', 'Not started', SYSDATE());";
                 $successText = "Instruction inserted: Wiggle";
                 break;
+            case 'push':
+                $sql = "INSERT INTO Instruction (User_UserID, Robot_RobotID, Instruction, Status, Log) VALUES (1, 1, 'Push', 'Not started', SYSDATE());";
+                $successText = "Instruction inserted: Wiggle";
+                break;
             default:
                 $sql = null;
         }
@@ -99,6 +103,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <img class="speccontrol-image" src="./web_elements/Wiggle.gif" alt="Wiggle">
                 </button>
                 <p class="speccontrol-label">Wiggle</p>
+            </form>
+
+            <!-- Push -->
+            <form method="POST" style="display:inline-block; text-align:center;">
+                <input type="hidden" name="action" value="push">
+                <button type="submit" style="border:none; background:none;">
+                    <img class="speccontrol-image" src="./web_elements/Move.gif" alt="Push">
+                </button>
+                <p class="speccontrol-label">Push</p>
             </form>
             
         </div>

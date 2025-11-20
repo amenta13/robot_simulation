@@ -59,6 +59,17 @@ def doWiggle(mc):
       time.sleep(delay)
    mc.send_angles(neutral, 50)
 
+def doPush(mc):
+   mc.send_angles([(-90),0,0,0,0,0],90)
+   time.sleep(1)
+   mc.send_angles([(-90),0,(-120),0,0,(-50)],90)
+   time.sleep(1)
+   mc.set_gripper_value(0,100)
+   time.sleep(1)
+   mc.send_angles([(-85),(-27),(-95),30,0,(-50)],90)
+   time.sleep(1)
+   mc.set_gripper_value(100,100)
+
 mc = MyCobot('/dev/ttyAMA0',1000000)
 # User names and passwords for db connection
 dbuser="u413142534_robotworks"
@@ -76,34 +87,37 @@ print("Select all from User table")
 try:
     #start a database cursor
    cursor = cnx.cursor()
-
-   #send in SQL
-   cursor.execute("""
-      SELECT * from Instruction;
-   """)
-   table = cursor.fetchall()
-   if table:
-      print(f"Data in Instruction Table:")
-      for row in table:
-         print(row[0], row[1], row[2], row[3], row[4],row[5])
-         if (row[4] == 'Not started'):
-            if row[3] == 'Pick up put down':
-               doPickUpPutDown(mc)
-            elif row[3] == 'Throw ball':
-               doThrowBall(mc)
-            elif row[3] == 'Wave':
-               doWave(mc)
-            elif row[3] == 'Wiggle':
-               doWiggle(mc)
-            update_sql = """
-               UPDATE Instruction
-               SET Status = %s
-               WHERE InsID = %s
-            """
-            cursor.execute(update_sql, ("Complete", row[0]))
-            cnx.commit() 
-   else:
-      print(f"Error connecting to DB.")
+   while True:
+      #send in SQL
+      cursor.execute("""
+         SELECT * from Instruction;
+      """)
+      table = cursor.fetchall()
+      if table:
+         print(f"Data in Instruction Table:")
+         for row in table:
+            print(row[0], row[1], row[2], row[3], row[4],row[5])
+            if (row[4] == 'Not started'):
+               if row[3] == 'Pick up put down':
+                  doPickUpPutDown(mc)
+               elif row[3] == 'Throw ball':
+                  doThrowBall(mc)
+               elif row[3] == 'Wave':
+                  doWave(mc)
+               elif row[3] == 'Wiggle':
+                  doWiggle(mc)
+               elif row[3] == 'Push':
+                  doPush(mc)
+               update_sql = """
+                  UPDATE Instruction
+                  SET Status = %s
+                  WHERE InsID = %s
+               """
+               cursor.execute(update_sql, ("Complete", row[0]))
+               cnx.commit()
+               time.sleep(1)
+      else:
+         print(f"Error connecting to DB.")
    
 #always execute the finally block even if the try breaks
        #(There are a limited number of db connections per hour on the system --I think 500 for my Hostinger site)
