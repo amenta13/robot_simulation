@@ -42,16 +42,16 @@ def doWave(mc):
    delay = 1
    neutral = [0, 0, 0, 0, 0, 0]
    adjustwrist = [0, 0, 0, 0, -90, 0]
-   mc.send_angles(neutral, 20)
+   mc.send_angles(neutral, 50)
    time.sleep(1)
-   mc.send_angles(adjustwrist, 20)
+   mc.send_angles(adjustwrist, 50)
    time.sleep(1)
    for c in range(cycles):
       mc.send_angles([0, 15, 15, 15, -90, 0], 25)
       time.sleep(delay)
       mc.send_angles([0, -15, -15, -15, -90, 0], 25)
       time.sleep(delay)
-   mc.send_angles(neutral, 20)
+   mc.send_angles(neutral, 50)
    time.sleep(delay)
 
 def doWiggle(mc):
@@ -61,9 +61,9 @@ def doWiggle(mc):
    mc.send_angles(neutral, 50)
    time.sleep(1)
    for c in range(cycles):
-      mc.send_angles([0, 15, -30, 15, 0, 0], 50)
+      mc.send_angles([0, 30, -45, 30, 0, 0], 50)
       time.sleep(delay)
-      mc.send_angles([0, -15, 30, -15, 0, 0], 50)
+      mc.send_angles([0, -30, 45, -30, 0, 0], 50)
       time.sleep(delay)
    mc.send_angles(neutral, 50)
    time.sleep(delay)
@@ -82,6 +82,8 @@ def doPush(mc):
    mc.send_angles([(-85),(-27),(-95),30,0,(-50)],90)
    time.sleep(delay)
    mc.set_gripper_value(100,100)
+   time.sleep(delay)
+   mc.send_angles(neutral, 50)
    time.sleep(delay)
 
 mc = MyCobot('/dev/ttyAMA0',1000000)
