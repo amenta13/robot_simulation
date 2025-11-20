@@ -3,15 +3,22 @@ from pymycobot.mycobot import MyCobot
 import time
 
 def doPickUpPutDown(mc):
+   delay = 1
+   neutral = [0, 0, 0, 0, 0, 0]
+   mc.send_angles(neutral, 50)
+   time.sleep(delay)
    mc.send_angles([(-80),(-35),(-90),20,0,0],50)
-   time.sleep(1)
+   time.sleep(delay)
    mc.set_gripper_value(0,100)
-   time.sleep(1)
+   time.sleep(delay)
    mc.send_angles([0,0,0,0,0,0],50)
-   time.sleep(1)
+   time.sleep(delay)
    mc.send_angles([(-80),(-35),(-90),20,0,0],50)
-   time.sleep(1)
+   time.sleep(delay)
    mc.set_gripper_value(100,100)
+   time.sleep(delay)
+   mc.send_angles(neutral, 50)
+   time.sleep(delay)
 
 def doThrowBall(mc):
    delay = 1
@@ -45,10 +52,11 @@ def doWave(mc):
       mc.send_angles([0, -15, -15, -15, -90, 0], 25)
       time.sleep(delay)
    mc.send_angles(neutral, 20)
+   time.sleep(delay)
 
 def doWiggle(mc):
    cycles = 3
-   delay = 0.25
+   delay = 1
    neutral = [0, 0, 0, 0, 0, 0]
    mc.send_angles(neutral, 50)
    time.sleep(1)
@@ -58,17 +66,23 @@ def doWiggle(mc):
       mc.send_angles([0, -15, 30, -15, 0, 0], 50)
       time.sleep(delay)
    mc.send_angles(neutral, 50)
+   time.sleep(delay)
 
 def doPush(mc):
+   delay = 1
+   neutral = [0, 0, 0, 0, 0, 0]
+   mc.send_angles(neutral, 50)
+   time.sleep(delay)
    mc.send_angles([(-90),0,0,0,0,0],90)
-   time.sleep(1)
+   time.sleep(delay)
    mc.send_angles([(-90),0,(-120),0,0,(-50)],90)
-   time.sleep(1)
+   time.sleep(delay)
    mc.set_gripper_value(0,100)
-   time.sleep(1)
+   time.sleep(delay)
    mc.send_angles([(-85),(-27),(-95),30,0,(-50)],90)
-   time.sleep(1)
+   time.sleep(delay)
    mc.set_gripper_value(100,100)
+   time.sleep(delay)
 
 mc = MyCobot('/dev/ttyAMA0',1000000)
 # User names and passwords for db connection
