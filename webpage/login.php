@@ -1,5 +1,13 @@
 <?php
 require_once 'web_elements/navbar.php';
+// Start session to detect logged-in user
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Determine login state
+$isLoggedIn = !empty($_SESSION['loggedin']);
+$loggedInUser = $isLoggedIn ? htmlspecialchars($_SESSION['Name']) : null;
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +18,13 @@ require_once 'web_elements/navbar.php';
         <title>Login Page</title>
     </head>
     <body>
+        <?php if ($isLoggedIn): ?>
+            <div class="loggedin-banner">
+                <span>You are currently logged in as <strong><?php echo $loggedInUser; ?></strong></span>
+                <a href="logout.php" class="logout-button">Logout</a>
+            </div>
+        <?php endif; ?>
+
         <div class="page-wrap">
             <div class="login-container">
                 <h2>Login</h2>

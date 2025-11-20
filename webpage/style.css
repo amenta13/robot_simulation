@@ -138,6 +138,48 @@ body {
     padding-bottom: var(--footer-height);
 }
 
+/* Banner shown when user is logged in (placed above .page-wrap) */
+.loggedin-banner {
+    /* Ensure banner clears the fixed header. Use the page's top padding
+       (70px) as a fallback but allow override via a CSS variable if needed. */
+    margin-top: calc(var(--header-height, 70px) + 8px);
+    margin-bottom: 10px; /* small gap to the login box */
+    text-align: center;
+    box-sizing: border-box;
+    padding: 8px 12px;
+}
+
+/* Logout button inside the logged-in banner */
+.loggedin-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.loggedin-banner .logout-button {
+    display: inline-block;
+    background: #e74c3c;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+}
+
+.loggedin-banner .logout-button:hover {
+    background: #c0392b;
+}
+
+/* When the banner is present immediately before the page wrap, pull the
+   login container up to be closer to the banner while keeping a small top
+   padding for breathing room. This only affects pages that include the banner. */
+.loggedin-banner + .page-wrap {
+    align-items: flex-start;
+    padding-top: 12px;
+}
+
 /* If the footer height changes (due to responsive layout), this JS will update the variable.
    The script is small and safe; it runs only if JS is enabled. */
 @media (min-width:0) {
