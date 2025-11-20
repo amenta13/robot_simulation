@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="post" novalidate>
             <label>Username: <input type="text" name="username" required></label><br>
             <label>Password: <input type="password" name="password" required minlength="8"></label><br>
+            <p>Password must contain between 8 and 20 characters, a capital letter, a lowercase letter, a number, and a special character.</p>
             <button type="submit">Register</button>
         </form>
         <p><a href="login.php">Back to login</a></p>

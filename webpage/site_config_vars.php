@@ -17,9 +17,10 @@
 
     }
 
-    if (!is_file($fullInstallPath."/".$data_config_path)) {
+    if (!is_file($data_config_path)) {
 
-        echo "You didn't setup your database configuration file at {$data_config_path}.";
+        echo "You didn't setup your database configuration file at {$data_config_path}.\n";
+        echo $fullInstallPath."/".$data_config_path;
         exit();
 
     }
