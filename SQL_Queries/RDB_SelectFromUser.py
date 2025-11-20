@@ -1,6 +1,65 @@
 import mysql.connector
+from pymycobot.mycobot import MyCobot
+import time
 
+def doPickUpPutDown(mc):
+   mc.send_angles([(-80),(-35),(-90),20,0,0],50)
+   time.sleep(1)
+   mc.set_gripper_value(0,100)
+   time.sleep(1)
+   mc.send_angles([0,0,0,0,0,0],50)
+   time.sleep(1)
+   mc.send_angles([(-80),(-35),(-90),20,0,0],50)
+   time.sleep(1)
+   mc.set_gripper_value(100,100)
 
+def doThrowBall(mc):
+   delay = 1
+   neutral = [0, 0, 0, 0, 0, 0]
+   pose1 = [90, 90, 0, 0, -90, 90]
+   pose2 = [90, 0, 0, 0, -90, 90]
+   pose3 = [90, -90, 0, 0, -90, 90]
+   mc.send_angles(neutral, 50)
+   time.sleep(delay)
+   mc.send_angles(pose1, 50)
+   time.sleep(delay)
+   mc.send_angles(pose2, 50)
+   time.sleep(delay)
+   mc.send_angles(pose3, 50)
+   time.sleep(delay)
+   mc.send_angles(neutral, 50)
+   time.sleep(delay)
+
+def doWave(mc):
+   cycles = 3
+   delay = 0.25
+   neutral = [0, 0, 0, 0, 0, 0]
+   adjustwrist = [0, 0, 0, 0, -90, 0]
+   mc.send_angles(neutral, 50)
+   time.sleep(1)
+   mc.send_angles(adjustwrist, 50)
+   time.sleep(1)
+   for c in range(cycles):
+      mc.send_angles([0, 15, 15, 15, -90, 0], 50)
+      time.sleep(delay)
+      mc.send_angles([0, -15, -15, -15, -90, 0], 50)
+      time.sleep(delay)
+   mc.send_angles(neutral, 50)
+
+def doWiggle(mc):
+   cycles = 3
+   delay = 0.25
+   neutral = [0, 0, 0, 0, 0, 0]
+   mc.send_angles(neutral, 50)
+   time.sleep(1)
+   for c in range(cycles):
+      mc.send_angles([0, 15, -30, 15, 0, 0], 50)
+      time.sleep(delay)
+      mc.send_angles([0, -15, 30, -15, 0, 0], 50)
+      time.sleep(delay)
+   mc.send_angles(neutral, 50)
+
+mc = MyCobot('/dev/ttyAMA0',1000000)
 # User names and passwords for db connection
 dbuser="u413142534_robotworks"
 dbpwd="two1x/Y9"
@@ -20,16 +79,31 @@ try:
 
    #send in SQL
    cursor.execute("""
-      SELECT * from User;
+      SELECT * from Instruction;
    """)
-   tables = cursor.fetchall()
-   if tables:
-      print(f"Data in User Table:")
-      for table in tables:
-         print(table[0], table[1], table[2])
+   table = cursor.fetchall()
+   if table:
+      print(f"Data in Instruction Table:")
+      for row in table:
+         print(row[0], row[1], row[2], row[3], row[4],row[5])
+         if (row[4] == 'Not started'):
+            if row[3] == 'Pick up put down':
+               doPickUpPutDown(mc)
+            elif row[3] == 'Throw ball':
+               doThrowBall(mc)
+            elif row[3] == 'Wave':
+               doWave(mc)
+            elif row[3] == 'Wiggle':
+               doWiggle(mc)
+            update_sql = """
+               UPDATE Instruction
+               SET Status = %s
+               WHERE InsID = %s
+            """
+            cursor.execute(update_sql, ("Complete", row[0]))
+            cnx.commit() 
    else:
       print(f"Error connecting to DB.")
-
    
 #always execute the finally block even if the try breaks
        #(There are a limited number of db connections per hour on the system --I think 500 for my Hostinger site)
