@@ -32,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <?php require_once 'web_elements/navbar.php'; ?>
     <div class="login-container">
-        <h2>Create account</h2>
+        <h2>Register</h2>
         <form method="post" novalidate>
             <label>Username: <input type="text" name="username" required></label><br>
             <label>Password: <input type="password" name="password" required minlength="8"></label><br>
-            <button type="submit">Create account</button>
+            <button type="submit">Register</button>
         </form>
         <p><a href="login.php">Back to login</a></p>
     </div>
