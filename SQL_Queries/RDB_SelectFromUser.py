@@ -87,6 +87,9 @@ print("Select all from User table")
 try:
     #start a database cursor
    cursor = cnx.cursor()
+   cursor.execute("""
+         DELETE FROM Instruction WHERE InsID > 0;
+      """)   
    while True:
       #send in SQL
       cursor.execute("""
@@ -117,7 +120,7 @@ try:
                cnx.commit()
                time.sleep(1)
       else:
-         print(f"Error connecting to DB.")
+         print(f"Empty table.")
    
 #always execute the finally block even if the try breaks
        #(There are a limited number of db connections per hour on the system --I think 500 for my Hostinger site)
