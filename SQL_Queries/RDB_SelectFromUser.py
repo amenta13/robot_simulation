@@ -32,7 +32,7 @@ def doThrowBall(mc):
 
 def doWave(mc):
    cycles = 3
-   delay = 0.25
+   delay = 1
    neutral = [0, 0, 0, 0, 0, 0]
    adjustwrist = [0, 0, 0, 0, -90, 0]
    mc.send_angles(neutral, 20)
@@ -40,9 +40,9 @@ def doWave(mc):
    mc.send_angles(adjustwrist, 20)
    time.sleep(1)
    for c in range(cycles):
-      mc.send_angles([0, 15, 15, 15, -90, 0], 20)
+      mc.send_angles([0, 15, 15, 15, -90, 0], 25)
       time.sleep(delay)
-      mc.send_angles([0, -15, -15, -15, -90, 0], 20)
+      mc.send_angles([0, -15, -15, -15, -90, 0], 25)
       time.sleep(delay)
    mc.send_angles(neutral, 20)
 
