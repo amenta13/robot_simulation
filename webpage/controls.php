@@ -4,6 +4,12 @@ require_once 'web_elements/navbar.php';
 
 ?>
 
+<!-- Coming soon banner (controls page only) -->
+<div class="loggedin-banner" id="coming-soon-banner" role="status" aria-live="polite">
+    <strong>Coming soon:</strong> This is an aspirational goal of ours. We hope to eventually have free control 
+                                of the robot using the W A S D keys.
+</div>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +28,14 @@ require_once 'web_elements/navbar.php';
     <nav>
         <a href="login.php">Login</a>
     </nav>
-    <button id="W" onclick="Wbutt()">W</button>
-    <br>
-    <button id="A" onclick="Abutt()">A</button>
-    <button id="S" onclick="Sbutt()">S</button>
-    <button id="D" onclick="Dbutt()">D</button>
+    <div class="wasd-container">
+        <button id="W" onclick="Wbutt()">W</button>
+        <div class="wasd-row">
+            <button id="A" onclick="Abutt()">A</button>
+            <button id="S" onclick="Sbutt()">S</button>
+            <button id="D" onclick="Dbutt()">D</button>
+        </div>
+    </div>
     <script src="func.js"></script>
 </body>
 </html>
