@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" style="border:none; background:none;">
                     <img class="speccontrol-image" src="./web_elements/PUPD.gif" alt="Pick Up & Put Down Duck">
                 </button>
-                <p class="speccontrol-label">Pick & Put Down Duck</p>
+                <p class="speccontrol-label">Pick & Put Down</p>
             </form>
 
             <!-- Throw Ball -->
