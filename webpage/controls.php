@@ -19,15 +19,6 @@ require_once 'web_elements/navbar.php';
     <title>Robot Control</title>
 </head>
 <body>
-    <nav>
-        <a href="index.php">Home</a>
-    </nav>
-    <nav>
-        <a href="about.php">About</a>
-    </nav>
-    <nav>
-        <a href="login.php">Login</a>
-    </nav>
     <div class="wasd-container">
         <button id="W" onclick="Wbutt()">W</button>
         <div class="wasd-row">

@@ -52,16 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Special Control</title>
 </head>
 <body>
-    <nav>
-        <a href="index.php">Home</a>
-    </nav>
-    <nav>
-        <a href="about.php">About</a>
-    </nav>
-    <nav>
-        <a href="login.php">Login</a>
-    </nav>
-
     <div style="padding:40px; text-align:center;">
         <h1 style="color:#3498db; margin-bottom:40px;">Special Controls</h1>
         <div id="status" style="min-height:30px; margin-bottom:20px; font-weight:bold; color:#333;"></div>

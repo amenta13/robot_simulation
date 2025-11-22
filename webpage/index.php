@@ -10,15 +10,7 @@ require_once 'web_elements/navbar.php';
         <meta charset="UTF-8">
         <link href="style.css" rel="stylesheet">
         <title>Home Page</title>
-        <nav>
-            <a href="controls.php">Controls</a>
-        </nav>
-        <nav>
-            <a href="about.php">About</a>
-        </nav>
-        <nav>
-            <a href="login.php">Login</a>
-        </nav>
+       
     </head>
     <body>
         <h1 style="text-align:center;font-weight:bold;font-size: 100px;margin:0;color:#3498db;">Robot Arm Project</h1>
